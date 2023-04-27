@@ -39,18 +39,15 @@ var cards = [
 // div class grid
 var grid = document.querySelector('.grid');
     
-    function createBoard(){
-        
-        for (var i = 0; i < cards.length; i++)
-            {
-                var card = document.createElement('img');
-                card.src = cards[i].img;
-                card.width = 100;
-                card.height = 100;
-                grid.appendChild(card);
-            }
-        
-    }
+function createBoard(){  
+    for (var i = 0; i < cards.length; i++)
+    {
+        var card = document.createElement('img');
+        card.setAttribute('src', 'images/blank.png');
+        card.setAttribute('data-id', i)
+        grid.appendChild(card);
+    }      
+}
 
 createBoard();
     
