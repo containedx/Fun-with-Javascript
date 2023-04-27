@@ -5,8 +5,6 @@ Simple game, written with html, css and javascript and simultaneously my first a
 
 
 
-
-
 ![](dino.gif)
 
 
