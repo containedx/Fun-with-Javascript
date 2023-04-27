@@ -25,8 +25,35 @@ var cards = [
     {
         name: 'pizza',
         img: 'images/pizza.png'
+    },
+    {
+        name: 'fries',
+        img: 'images/fries.png'
+    },
+    {
+        name: 'cheeseburger',
+        img: 'images/cheeseburger.png'
+    },
+    {
+        name: 'vegehotdog',
+        img: 'images/hotdog.png'
+    },
+    {
+        name: 'ice-cream',
+        img: 'images/ice-cream.png'
+    },
+    {
+        name: 'milkshake',
+        img: 'images/milkshake.png'
+    },
+    {
+        name: 'pizza',
+        img: 'images/pizza.png'
     }
 ];
+ 
+
+cards.sort(() => 0.5 - Math.random())
 
 // div class grid
 var grid = document.querySelector('.grid');
