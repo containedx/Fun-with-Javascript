@@ -52,13 +52,11 @@ var cards = [
     }
 ];
  
-
 cards.sort(() => 0.5 - Math.random())
 
 // div class grid
 var grid = document.querySelector('.grid');
-let cardsChosen = []
-let cardsChosenId = []
+let chosenCards = []
     
 function createBoard(){  
     for (var i = 0; i < cards.length; i++)
@@ -75,6 +73,31 @@ function createBoard(){
 function flipCard() {
     let cardId = this.getAttribute('id')
     this.setAttribute('src', cards[cardId].img)
+    chosenCards.push(cardId)
+    if (chosenCards.length === 2) {
+      setTimeout(checkMatch, 500)
+    }
+}
+    
+
+function checkMatch() {
+    
+    var cardsInGrid = document.querySelectorAll('img')
+    
+    var card0 = chosenCards[0]
+    var card1 = chosenCards[1]
+    
+    
+    if (cards[card0].name == cards[card1].name){
+        cardsInGrid[card0].removeEventListener('click', flipCard)
+        cardsInGrid[card1].removeEventListener('click', flipCard)
+    }
+    else {
+        cardsInGrid[card0].setAttribute('src', 'images/blank.png')
+        cardsInGrid[card1].setAttribute('src', 'images/blank.png')
+    }
+    
+    chosenCards =[]
 }
 
     
